@@ -1,9 +1,9 @@
 name: test print
-on:
-  workflow_call
-jobs:
-  my-job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: my-step
-        run: echo "Comment when PR is open"
+runs:
+  using: 'composite'
+  steps:
+    - name: my-job
+      runs-on: ubuntu-latest
+      steps:
+        - name: my-step
+          run: echo "Comment when PR is open"
